@@ -33,7 +33,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
-- has_many :messages
 
 
 ## messagesテーブル
@@ -41,13 +40,12 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |body|text|
-|image|string|
+|image|text|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
 
 ### Association
-- belongs_to :member
 - belongs_to :user
 - belongs_to :group
 
@@ -55,9 +53,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
-|name|string|null: false|
-|e-mail|string|null: false|
+|name|string|null: false, unique: true|
+|e-mail|string|null: false, unique: true|
 
 
 ### Association
@@ -70,8 +67,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|name|string|null: false, foreign_key: true|
+|name|string|null: false, unique: true|
 
 
 ### Association
