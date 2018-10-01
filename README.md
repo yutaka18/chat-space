@@ -40,8 +40,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false, foreign_key: true|
-|image|string|null: true, foreign_key: true|
+|body|text|
+|image|string|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
@@ -55,15 +55,15 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|name|string|null: fals, foreign_key: true|
-|e-mail|string|null: false, foreign_key: true|
+|id|integer|null: false|
+|name|string|null: false|
+|e-mail|string|null: false|
 
 
 ### Association
 - has_many :members
 - has_many :messages
-- has_many :groups
+- has_many :groups, through: :members
 
 
 ## groupsテーブル
@@ -71,12 +71,12 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
-|name|string|null: fals, foreign_key: true|
+|name|string|null: false, foreign_key: true|
 
 
 ### Association
 - has_many :members
 - has_many :messages
-- belongs_to :user
+- has_many :users, through: :members
 
 
