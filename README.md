@@ -33,7 +33,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
-
+- has_many :messages
 
 
 ## messagesテーブル
@@ -47,7 +47,36 @@ Things you may want to cover:
 
 
 ### Association
-- belongs_to :body
-- belongs_to :image
+- belongs_to :member
+- belongs_to :user
+- belongs_to :group
+
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, foreign_key: true|
+|name|string|null: fals, foreign_key: true|
+|e-mail|string|null: false, foreign_key: true|
+
+
+### Association
+- has_many :members
+- has_many :messages
 - has_many :groups
-- has_many :users
+
+
+## groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, foreign_key: true|
+|name|string|null: fals, foreign_key: true|
+
+
+### Association
+- has_many :members
+- has_many :messages
+- belongs_to :user
+
+
