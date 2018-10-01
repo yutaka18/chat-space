@@ -53,7 +53,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique: true, index: nameindex|
+|name|string|null: false, unique: true, index: true|
 |e-mail|string|null: false, unique: true|
 
 
