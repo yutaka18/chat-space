@@ -7,10 +7,10 @@
         %h3.headername__name yutaka
         %ul.icon
           %li.icon__list1
-            %a{:href => "/groups/new"}
+            = link_to "/groups/new", method: :get do
               %i.fa.fa-edit
           %li.icon__list2
-            %a{:href => "/users/user_id/edit"}
+            = link_to "/users/user_id/edit", method: :get do
               %i.fa.fa-cog
       .headergroup
         .left-headergroup
@@ -19,9 +19,9 @@
             Member :
             %li.members__name yutaka
         .right-headergroup
-          %a.right-header__button{:href => "/groups/group_id/edit"} Edit
+          = link_to 'Edit', "/groups/group_id/edit", method: :get
       .left-content
-        %a{:href => "/groups/group_id/messages"}
+        = link_to "/groups/group_id/messages", method: :get do
           .left-content__name
             サンプル
           .left-content__comment
@@ -38,12 +38,12 @@
               %p.lower-message__content
                 テスト
         .form
-          %form#new_message.js-form{"accept-charset" => "UTF-8", :action => "/groups/22932/messages", :enctype => "multipart/form-data", :method => "post"}
-            %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-            %input{:name => "authenticity_token", :type => "hidden", :value => "+bVbGrRUGHFOuvRKgT2sSfTA+DtRCsYoLlmR3Yx140obX75hnjrI3Lzu8MXtqEeO37c4xB9IWpKUp1gVD0gTGw=="}/
-            %input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+          %form#new_message.js-form{"accept-charset" => "UTF-8", action: "/groups/22932/messages", enctype: "multipart/form-data", method: "post"}
+            %input{name: "utf8", type: "hidden", value: "✓"}/
+            %input{name: "authenticity_token", type: "hidden", value: "+bVbGrRUGHFOuvRKgT2sSfTA+DtRCsYoLlmR3Yx140obX75hnjrI3Lzu8MXtqEeO37c4xB9IWpKUp1gVD0gTGw=="}/
+            %input#message_content.form__message.js-content{name: "message[content]", placeholder: "type a message", type: "text"}/
             .form__mask
-              %label.form__mask__image{:for => "message_image"}
+              %label.form__mask__image{for:"message_image"}
                 %i.fa.fa-picture-o.icon
-                  %input#message_image.hidden.js-file{:name => "message[image]", :type => "file"}/
-            %input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+                  %input#message_image.hidden.js-file{name: "message[image]", type: "file"}/
+            %input.form__submit{"data-disable-with" => "Send", name: "commit", type: "submit", value: "Send"}/
