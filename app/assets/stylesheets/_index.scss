@@ -1,0 +1,100 @@
+
+.notification {
+	background-color: #38AEF0 ;
+	.alert {
+		color: #fff;
+		text-align: center;
+	}
+}
+
+.wrapper {
+	width: 100vw;
+	height: 100%;
+	display: flex ;
+	background-color: #AAAAAA;
+	.side-bar {
+		box-sizing: border-box;
+		height: 100%;
+		width: 300px;
+		padding: 0px 20px 0px;
+		color: #fff;
+		.header {
+			height: 100px;
+			background-color: #253141;
+			line-height: 100px;
+			
+			&__name {
+				font-size: 16px;
+				font-weight: bold; 
+				display: inline-block;
+				float: left;
+				background-color: red;
+			}
+			&__lists {
+				display: inline-block;
+				float: right;
+				list-style: none;
+				padding: 36px;
+				background-color: red;
+				li.list {
+					list-style: none;
+					text-align: -webkit-match-parent;
+							a {
+								color: -webkit-link;
+		    					cursor: pointer;
+		    					text-decoration: underline;
+    							.fa {
+		    						display: inline-block;
+		    						font: normal normal normal 14px/1 FontAwesome;
+		    						text-rendering: auto;
+		    						-webkit-font-smoothing: antialiased;
+    								}
+							  }
+						}
+				li.list {
+					list-style: none;
+					text-align: -webkit-match-parent;
+							a {
+								color: -webkit-link;
+		    					cursor: pointer;
+		    					text-decoration: underline;
+    							.fa {
+		    						display: inline-block;
+		    						font: normal normal normal 14px/1 FontAwesome;
+		    						text-rendering: auto;
+		    						-webkit-font-smoothing: antialiased;
+    								}
+							  }
+						}
+
+					}
+				}
+		.groups  {
+			background-color: #2f3e51;
+    		height: calc(100vh - 100px);
+    		.group  {
+    			box-sizing: border-box;
+    			padding: 20px 0 40px;
+    				a   {
+    					color: -webkit-link;
+    					cursor: pointer;
+    					text-decoration: underline;
+    					&__name {
+    							color: #fff;
+    							font-size: 15px;
+    					}
+    					&__message {
+    						color: red;
+    					}
+
+    					}
+    				}
+
+
+				}
+		}
+	.chat {
+
+
+	}
+}
