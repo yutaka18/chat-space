@@ -12,95 +12,95 @@
   background-color: #aaa;
     .contentheader {
       height: 100px;
-          .headername {
-            height: 100px;
-            background-color: #253141;
-            line-height: 100px;
-            box-sizing: border-box;
-            width: 300px;
-            padding: 0px 20px 0px;
+      .headername {
+        height: 100px;
+        background-color: #253141;
+        line-height: 100px;
+        box-sizing: border-box;
+        width: 300px;
+        padding: 0px 20px 0px;
+        float: left;
+        color: #fff;
+          &__name {
+            font-size: 16px;
+            font-weight: bold; 
+            display: inline-block;
             float: left;
-            color: #fff;
-                &__name {
-                    font-size: 16px;
-                    font-weight: bold; 
-                    display: inline-block;
-                    float: left;
-                }
-                .icon {
-                  display: inline-block;
-                  float: right;
-                  list-style: none;
-                  display: flex;
-                    li.icon__list1 {
-                      list-style: none;
-                      text-align: -webkit-match-parent;
-                      display: flex;
-                      padding: 0 10px 0;
-                        a {
-                          cursor: pointer;
-                          text-decoration: underline;
-                            i.fa.fa-edit {
-                              display: inline-block;
-                              text-rendering: auto;
-                              -webkit-font-smoothing: antialiased;
-                            }
-                        }
-                    }
-                    li.icon__list2 {
-                      list-style: none;
-                      text-align: -webkit-match-parent;
-                      display: flex;
-                        a {
-                          cursor: pointer;
-                          text-decoration: underline;
-                            i.fa.fa-cog {
-                              display: inline-block;
-                              text-rendering: auto;
-                              -webkit-font-smoothing: antialiased;
-                            }
-                        }
-                    }
-                }
           }
-          .headergroup {
-            background-color: #fff;
+          .icon {
+            display: inline-block;
             float: right;
-            width: calc(100vw - 340px);
-            height: 100%;
-            padding: 0px 40px 0px 0px;
-            border-bottom: solid #eee;
-              .left-headergroup {
-                float: left;
-                  .left-headergroup__title {
-                    color: #333;
-                    font-size: 20px;
-                    padding: 35px 0px 0px 40px;
+            list-style: none;
+            display: flex;
+            li.icon__list1 {
+              list-style: none;
+              text-align: -webkit-match-parent;
+              display: flex;
+              padding: 0 10px 0;
+                a {
+                  cursor: pointer;
+                  text-decoration: underline;
+                  i.fa.fa-edit {
+                    display: inline-block;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
                   }
-                  ul.members {
-                    color: #999;
-                    font-size: 12px;
-                    list-style: none;
-                    padding: 15px 0 0 40px;
-                    display: flex;
-                      li.members__name {
-                        color: #999999;
-                        font-size: 12px;
-                        float: left;
-                        display: inline-block;
-                      }
+                }
+            }
+            li.icon__list2 {
+              list-style: none;
+              text-align: -webkit-match-parent;
+              display: flex;
+                a {
+                  cursor: pointer;
+                  text-decoration: underline;
+                  i.fa.fa-cog {
+                    display: inline-block;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
                   }
-              }
-              .right-headergroup {
-                border: 1px solid #38aef0;
-                color: #38aef0;
-                float: right;
-                height: 40px;
-                line-height: 40px;
-                margin-top: 28px;
-                padding: 0px 20px;
-              }
+                }
+            }
           }
+      }
+      .headergroup {
+        background-color: #fff;
+        float: right;
+        width: calc(100vw - 340px);
+        height: 100%;
+        padding: 0px 40px 0px 0px;
+        border-bottom: solid #eee;
+          .left-headergroup {
+            float: left;
+            .left-headergroup__title {
+              color: #333;
+              font-size: 20px;
+              padding: 35px 0px 0px 40px;
+            }
+            ul.members {
+              color: #999;
+              font-size: 12px;
+              list-style: none;
+              padding: 15px 0 0 40px;
+              display: flex;
+                li.members__name {
+                  color: #999999;
+                  font-size: 12px;
+                  float: left;
+                  display: inline-block;
+                }
+            }
+          }
+          .right-headergroup {
+            border: 1px solid #38aef0;
+            color: #38aef0;
+            float: right;
+            height: 40px;
+            line-height: 40px;
+            margin-top: 28px;
+            padding: 0px 20px;
+          }
+      }
     }
     .left-content {
       background-color: #2f3e51;
@@ -181,15 +181,15 @@
                     }
                 }
             }
-                .form__submit {
-                  background-color: #38aef0;
-                  border: none;
-                  color: #fff;
-                  font-size: 16px;
-                  height: 50px;
-                  margin-left: 15px;
-                  padding: 0 30px;
-                }
+            .form__submit {
+              background-color: #38aef0;
+              border: none;
+              color: #fff;
+              font-size: 16px;
+              height: 50px;
+              margin-left: 15px;
+              padding: 0 30px;
+            }
         }
     }
 }
