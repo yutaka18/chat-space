@@ -4,13 +4,14 @@
   .contents
     .contentheader
       .headername
-        %h3.headername__name yutaka
+        %h3.headername__name
+          = current_user.name
         %ul.icon
           %li.icon__list1
-            = link_to "/groups/new", method: :get do
+            = link_to new_group_path do
               %i.fa.fa-edit
           %li.icon__list2
-            = link_to "/users/user_id/edit", method: :get do
+            = link_to edit_user_path(current_user) do
               %i.fa.fa-cog
       .headergroup
         .left-headergroup
@@ -21,11 +22,13 @@
         .right-headergroup
           = link_to 'Edit', "/groups/group_id/edit", method: :get
       .left-content
-        = link_to "/groups/group_id/messages", method: :get do
-          .left-content__name
-            サンプル
-          .left-content__comment
-            よろしくお願いします。
+        - current_user.groups.each do |group|
+          .wrapper
+            = link_to group_messages_path(group) do
+              .left-content__name
+                = group.name
+              .left-content__comment
+                よろしくお願いします。
       .contents-main
         .right-content
           .message

@@ -107,21 +107,27 @@
       box-sizing: border-box;
       height: calc(100vh - 100px);
       width: 300px;
-      padding: 20px 20px 40px;
+      padding: 0px 20px 40px;
+      overflow: scroll;
       float: left;
-        &__name {
-          font-size: 15px;
-          color: #fff;
-        }
-        &__comment {
-          font-size: 11px;
-          color: #fff;
-          padding:  5px 0 0 ;
+        .wrapper {
+          box-sizing: border-box;
+          padding: 20px 0 40px;
+          .left-content__name {
+            font-size: 15px;
+            color: #fff;
+          }
+          .left-content__comment {
+            font-size: 11px;
+            color: #fff;
+            padding:  5px 0 0 ;
+          }
         }
     }
     .contents-main {
       height: calc(100vh - 100px);
       width: calc(100vw - 300px);
+      overflow: scroll;
       float: right;
       background-color: #fafafa;
         .right-content {
