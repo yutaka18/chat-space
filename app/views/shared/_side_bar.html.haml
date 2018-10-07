@@ -1,0 +1,19 @@
+.sidevar
+  .sidename
+    %h3.sidename__name
+      = current_user.name
+    %ul.con
+      %li.con__list1
+        = link_to new_group_path do
+          %i.fa.fa-edit
+      %li.con__list2
+        = link_to edit_user_path(current_user) do
+          %i.fa.fa-cog
+  .side-content
+    - current_user.groups.each do |group|
+      .sidegroupvar
+        = link_to group_messages_path(group) do
+          .sideleft-content__name
+            = group.name
+          .sideleft-content__comment
+            よろしくお願いします。
