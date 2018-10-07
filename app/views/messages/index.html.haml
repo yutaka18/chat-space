@@ -1,16 +1,16 @@
 %body
-  %header.header
-    .alert チャットグループが作成されました。
+  / %header.header
+  /   .alert チャットグループが作成されました。
   .contents
     .contentheader
       .headername
         %h3.headername__name
           = current_user.name
-        %ul.icon
-          %li.icon__list1
+        %ul.icons
+          %li.icons__list1
             = link_to new_group_path do
               %i.fa.fa-edit
-          %li.icon__list2
+          %li.icons__list2
             = link_to edit_user_path(current_user) do
               %i.fa.fa-cog
       .headergroup
@@ -20,33 +20,24 @@
             Member :
             %li.members__name yutaka
         .right-headergroup
-          = link_to 'Edit', "/groups/group_id/edit", method: :get
-      .left-content
-        - current_user.groups.each do |group|
-          .wrapper
-            = link_to group_messages_path(group) do
-              .left-content__name
-                = group.name
-              .left-content__comment
-                よろしくお願いします。
-      .contents-main
-        .right-content
-          .message
-            .message__box
-              .message__username
-                ibaragi
-              .message__date
-                2018/09/26 11:00
-            .lower-message
-              %p.lower-message__content
-                テスト
-        .form
-          %form#new_message.js-form{"accept-charset": "UTF-8", action: "/groups/22932/messages", enctype: "multipart/form-data", method: "post"}
-            %input{name: "utf8", type: "hidden", value: "✓"}/
-            %input{name: "authenticity_token", type: "hidden", value: "+bVbGrRUGHFOuvRKgT2sSfTA+DtRCsYoLlmR3Yx140obX75hnjrI3Lzu8MXtqEeO37c4xB9IWpKUp1gVD0gTGw=="}/
-            %input#message_content.form__message.js-content{name: "message[content]", placeholder: "type a message", type: "text"}/
-            .form__mask
-              %label.form__mask__image{for:"message_image"}
-                %i.fa.fa-picture-o.icon
-                  %input#message_image.hidden.js-file{name: "message[image]", type: "file"}/
-            %input.form__submit{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
+          = link_to 'Edit', "edit", method: :get
+    .left-content
+      - current_user.groups.each do |group|
+        .wrapper
+          = link_to group_messages_path(group) do
+            .left-content__name
+              = group.name
+            .left-content__comment
+              = group.show_last_message
+    .contents-main
+      .right-content
+        .message
+          = render @messages
+      .form
+        = form_for [@group, @message] do |f|
+          = f.text_field :body, class: 'form__message', placeholder: 'type a message'
+          .form__mask
+            = f.label :image, class: 'form__mask__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'form__submit'
