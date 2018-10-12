@@ -1,6 +1,6 @@
 $(function(){
 	function buildHTML(message){
-		var image = (message.image !== null) ? `<img class = "lower-message__image", src="${message.image}">` : '' ;
+		var image = message.image  ? `<img class = "lower-message__image", src="${message.image}">` : '' ;
 		var html = `<div class="message">
 									<div class="message__box">
 										<div class="message__username">
@@ -33,16 +33,16 @@ $(function(){
   	})
 	  .done(function(data){
 	  	var html = buildHTML(data);
-	  	$('#message_image').val('')
+	  	$('#new_message')[0].reset();
 	  	$('.right-content').append(html)
-	  	$('.form__message').val('')
-	  	$('.form__submit').prop('disabled', false); 
 	  	$('.right-content').animate({
 	  		scrollTop: $('.right-content')[0].scrollHeight}, 'fast');
 	  })
 	  .fail(function(){
       alert('error');
-      $('.form__submit').prop('disabled', false);
     })
+    .always(function(){
+    	 $('.form__submit').prop('disabled', false);
+    });
 	})
 })
