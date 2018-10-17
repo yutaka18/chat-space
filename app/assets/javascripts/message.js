@@ -67,21 +67,17 @@ $(function(){
       $('.form__submit').prop('disabled', false);
     });
   })
-
   $(function(){
     var interval = setInterval(update, 5000)
   });
-
   function update() {
     var Messageid = $('.message__box').last().data('message-id');
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
       $.ajax({
       url: window.location.href,
-      type: "GET",
-      dataType: 'json',
       data: {id: Messageid},
-      processData: false,
-      contentType: false
+      method: "GET",
+      dataType: 'json',
       })
       .done(function(json) {
         var insertHTML = "";
@@ -97,7 +93,7 @@ $(function(){
         alert('自動更新に失敗しました');
       });
     } else {
-        clearInterval(interval);
+        clearInterval(interval)
       }
-  } 
+  }
 })
