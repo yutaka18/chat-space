@@ -14,3 +14,4 @@ CarrierWave.configure do |config|
 
   config.fog_directory  = 'yutaka-update'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/yutaka-update'
+end
