@@ -1,5 +1,6 @@
 $(function(){
   function buildHTML(message){
+    if (message.body || message.image) {
     var image = message.image  ? `<img class = "lower-message__image", src="${message.image}">` : '' ;
     var html = `<div class="message">
                   <div class="message__box" data-message-id="${message.id}">
@@ -18,6 +19,9 @@ $(function(){
                   </div>
                 </div>`
     return html;
+    } else {
+      alert('メッセージがないよ');
+    }
   }
 
   function buildADDHTML(message){
